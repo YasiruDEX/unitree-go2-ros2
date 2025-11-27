@@ -117,6 +117,19 @@ def generate_launch_description():
         }.items(),
     )
 
+    # Add Foxglove Bridge Node
+    foxglove_bridge = Node(
+        package='foxglove_bridge',
+        executable='foxglove_bridge',
+        name='foxglove_bridge',
+        parameters=[{
+            'port': 8765,
+            'address': '0.0.0.0',
+            'use_sim_time': LaunchConfiguration('use_sim_time'),
+        }],
+        output='screen'
+    )
+
     return LaunchDescription(
         [
             declare_use_sim_time,
@@ -131,7 +144,7 @@ def generate_launch_description():
             declare_world_init_z,
             declare_world_init_heading,
             bringup_ld,
-            gazebo_ld
-
+            gazebo_ld,
+            # foxglove_bridge
         ]
     )
