@@ -195,6 +195,7 @@ def generate_launch_description():
         parameters=[
             {"base_link_frame": LaunchConfiguration("base_link_frame")},
             {"use_sim_time": LaunchConfiguration("use_sim_time")},
+            {"publish_tf": False},
             os.path.join(
                 get_package_share_directory("champ_base"),
                 "config",
@@ -213,6 +214,7 @@ def generate_launch_description():
         parameters=[
             {"base_link_frame": LaunchConfiguration("base_link_frame")},
             {"use_sim_time": LaunchConfiguration("use_sim_time")},
+            {"publish_tf": False},
             os.path.join(
                 get_package_share_directory("champ_base"),
                 "config",
@@ -257,9 +259,9 @@ def generate_launch_description():
             declare_close_loop_odom,
             description_ld,
             quadruped_controller_node,
-            state_estimator_node,
-            base_to_footprint_ekf,
-            footprint_to_odom_ekf,
+            # state_estimator_node,
+            # base_to_footprint_ekf,
+            # footprint_to_odom_ekf,
             rviz2
         ]
     )

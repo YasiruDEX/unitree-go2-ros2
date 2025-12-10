@@ -167,6 +167,6 @@ def generate_launch_description():
             load_joint_state_controller,
             # load_joint_trajectory_position_controller
             load_joint_trajectory_effort_controller,
-            contact_sensor
+            # contact_sensor
         ]
     )

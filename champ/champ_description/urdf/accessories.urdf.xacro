@@ -23,7 +23,7 @@
         </xacro:asus_camera>
         
 
-        <link name="imu_link">
+        <link name="livox_frame">
             <inertial>
                 <mass value="0.001"/>
                 <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -33,21 +33,21 @@
         </link>
         <joint name="imu_joint" type="fixed">
             <parent link="${base_name}" />
-            <child link="imu_link" />
+            <child link="livox_frame" />
         </joint>
         
-        <gazebo reference="imu_link">
+        <gazebo reference="livox_frame">
                 <sensor name="imu_controller" type="imu">
                     <always_on>true</always_on>
                     <update_rate>50</update_rate>
                     <plugin name="gazebo_ros_imu_sensor" filename="libgazebo_ros_imu_sensor.so">
                         <ros>
-                            <namespace>/imu</namespace>
-                            <argument>~/out:=data</argument>
+                            <namespace>livox</namespace>
+                            <argument>~/out:=imu</argument>
                         </ros>
                         <!-- <updateRate>50.0</updateRate>
                         <bodyName>imu_link</bodyName>
-                        <topicName>imu/data</topicName>
+                        <topicName>livox/imu</topicName>
                         <accelDrift>0.005 0.005 0.005</accelDrift>
                         <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
                         <rateDrift>0.005 0.005 0.005 </rateDrift>

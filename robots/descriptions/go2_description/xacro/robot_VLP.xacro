@@ -67,11 +67,11 @@
 
     <joint name="imu_joint" type="fixed">
         <parent link="trunk"/>
-        <child link="imu_link"/>
+        <child link="livox_frame"/>
         <origin rpy="0 0 0" xyz="0 0 0"/>
     </joint>
 
-    <link name="imu_link">
+    <link name="livox_frame">
         <inertial>
             <mass value="0.001"/>
             <origin rpy="0 0 0" xyz="0 0 0"/>

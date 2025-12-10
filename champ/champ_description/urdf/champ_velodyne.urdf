@@ -137,7 +137,7 @@
     <plugin filename="libhector_gazebo_ros_imu.so" name="imu_controller">
       <updateRate>50.0</updateRate>
       <bodyName>imu_link</bodyName>
-      <topicName>imu/data</topicName>
+      <topicName>livox/imu</topicName>
       <accelDrift>0.005 0.005 0.005</accelDrift>
       <accelGaussianNoise>0.005 0.005 0.005</accelGaussianNoise>
       <rateDrift>0.005 0.005 0.005 </rateDrift>
@@ -242,8 +242,8 @@
         </noise>
       </ray>
       <plugin filename="libgazebo_ros_velodyne_laser.so" name="gazebo_ros_laser_controller">
-        <topicName>velodyne_points</topicName>
-        <frameName>velodyne</frameName>
+        <topicName>livox/lidar</topicName>
+        <frameName>livox_frame</frameName>
         <min_range>0.9</min_range>
         <max_range>100</max_range>
         <gaussianNoise>0.008</gaussianNoise>

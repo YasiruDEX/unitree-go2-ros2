@@ -64,7 +64,7 @@ MessageRelay::MessageRelay():
 
     if(has_imu_)
     {
-        imu_publisher_ = this->create_publisher<sensor_msgs::msg::Imu>("imu/data", 1);
+        imu_publisher_ = this->create_publisher<sensor_msgs::msg::Imu>("livox/imu", 1);
         mag_publisher_ = this->create_publisher<sensor_msgs::msg::MagneticField>("imu/mag", 1);
     }
 

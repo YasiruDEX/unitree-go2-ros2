@@ -110,7 +110,7 @@ def generate_launch_description():
         ),
         launch_arguments={
             "pointcloud_topic": "/velodyne_points",
-            "imu_topic": "/imu/data",
+            "imu_topic": "/livox/imu",
             "rviz": "true"
         }.items()
     )
